@@ -162,6 +162,17 @@ h2 {
   color: var(--color-accent);
 }
 
+.brand-placeholder {
+  display: inline-flex;
+  width: clamp(80px, 12vw, 120px);
+  height: clamp(30px, 4vw, 40px);
+  background: rgba(255,255,255,0.14);
+  border: 1px dashed rgba(255,255,255,0.8);
+  border-radius: 12px;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
 /* ---- Logo ---- */
 .brand {
   position: absolute;
