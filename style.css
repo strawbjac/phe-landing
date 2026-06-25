@@ -112,9 +112,10 @@ h2 {
   width: 100vw;
   overflow: hidden;
   position: relative;
-  background-image: url('assets/hero.jpg');
+  background-image: url('assets/phe-landing.png');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -170,8 +171,9 @@ h2 {
 }
 
 .brand img {
-  height: clamp(28px, 4vw, 40px);
-  filter: brightness(0) invert(1); /* makes logo white — remove if your logo is already white/light */
+  width: clamp(120px, 18vw, 220px);
+  height: auto;
+  filter: none;
 }
 
 /* ---- Quote: the one bold, quiet moment ---- */
