@@ -105,3 +105,116 @@ h2 {
 .social a:focus-visible {
   text-decoration: underline;
 }
+
+/* ---- Frame: full-bleed photo background ---- */
+.frame {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  background-image: url('assets/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-lg);
+}
+
+/* Scrim — subtle dark gradient so text stays legible without hiding the photo */
+.frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.35) 0%,
+    rgba(0,0,0,0) 30%,
+    rgba(0,0,0,0) 70%,
+    rgba(0,0,0,0.45) 100%
+  );
+  pointer-events: none;
+}
+
+/* Everything inside .frame needs to sit above the scrim */
+.nav, .brand, .quote, .info-cluster {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Nav ---- */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+  color: #FAF9F6;
+  font-weight: 500;
+  font-size: clamp(0.75rem, 1vw, 0.9rem);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  color: var(--color-accent);
+}
+
+/* ---- Logo ---- */
+.brand {
+  position: absolute;
+  top: var(--space-lg);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.brand img {
+  height: clamp(28px, 4vw, 40px);
+  filter: brightness(0) invert(1); /* makes logo white — remove if your logo is already white/light */
+}
+
+/* ---- Quote: the one bold, quiet moment ---- */
+.quote {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FAF9F6;
+  font-weight: 500;
+  font-size: clamp(2.2rem, 6vw, 5rem);
+  line-height: 1.05;
+  max-width: 24ch;
+  margin: 0 auto;
+}
+
+/* ---- Info cluster: bottom-center, quiet, uniform ---- */
+.info-cluster {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  align-self: center;
+  text-align: center;
+  color: #FAF9F6;
+}
+
+.info-cluster h2 {
+  font-size: clamp(0.65rem, 0.9vw, 0.75rem);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3em;
+  opacity: 0.7;
+}
+
+.info-cluster p,
+.info-cluster li,
+.info-cluster a {
+  font-size: clamp(0.8rem, 1vw, 0.95rem);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.info-cluster a:hover,
+.info-cluster a:focus-visible {
+  color: var(--color-accent);
+}
