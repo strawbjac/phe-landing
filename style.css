@@ -1,0 +1,107 @@
+/* ---- Font ---- */
+@font-face {
+  font-family: 'Overused Grotesk';
+  src: url('assets/fonts/OverusedGrotesk-VF.woff') format('woff-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, li {
+  list-style: none;
+}
+
+/* ---- Design tokens (placeholders — swap when brand colors land) ---- */
+:root {
+  --font-display: 'Overused Grotesk', sans-serif;
+  --font-body: 'Overused Grotesk', sans-serif;
+
+  --color-bg: #FAF9F6;
+  --color-text: #111111;
+  --color-accent: #ADCDDB;
+  --color-muted: #6B6B6B;
+
+  --space-xs: clamp(0.4rem, 1vw, 0.6rem);
+  --space-sm: clamp(0.8rem, 2vw, 1.2rem);
+  --space-md: clamp(1.2rem, 3vw, 2rem);
+  --space-lg: clamp(2rem, 5vw, 3.5rem);
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+/* ---- Nav ---- */
+.nav {
+  display: flex;
+  gap: var(--space-md);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  color: var(--color-accent);
+}
+
+/* ---- Section headers ---- */
+h2 {
+  font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-xs);
+}
+
+/* ---- Quote ---- */
+.quote {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1rem, 1.8vw, 1.6rem);
+  line-height: 1.3;
+  max-width: 32ch;
+}
+
+/* ---- Social ---- */
+.social a {
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+}
+
+.social a:hover,
+.social a:focus-visible {
+  text-decoration: underline;
+}
